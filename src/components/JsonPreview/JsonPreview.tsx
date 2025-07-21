@@ -1,7 +1,7 @@
 import type React from "react"
 
 interface JsonPreviewProps {
-  jsonOutput: Record<string, any>
+  jsonOutput: Record<string, unknown>
   className?: string
 }
 

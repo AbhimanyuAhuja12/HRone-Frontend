@@ -1,10 +1,10 @@
-import React from 'react'
+import JsonSchemaBuilder from './components/JsonSchemaBuilder/JsonSchemaBuilder'
 
 const App = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
+      <h1 className="min-h-screen bg-white">
+        <JsonSchemaBuilder />
       </h1>
     </div>
   )

@@ -1,69 +1,117 @@
-# React + TypeScript + Vite
+# JSON Schema Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional, interactive JSON Schema Builder built with React, TypeScript, and Tailwind CSS. Create complex JSON schemas with nested structures through an intuitive drag-and-drop interface.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **🎯 Intuitive Interface**: Clean, user-friendly form builder with real-time JSON preview
+- **🔄 Deep Nesting**: Support for unlimited levels of nested objects
+- **🎨 Visual Hierarchy**: Clear indentation and connecting lines for nested structures
+- **⚡ Real-time Preview**: Live JSON output updates as you build your schema
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Quick Start
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```
+   git clone https://github.com/AbhimanyuAhuja12/HRone-Frontend
+   ```
+
+2. **Install dependencies**
+   ```
+   npm install
+   ```
+  
+
+3. **Run the development server**
+   ```
+   npm run dev
+   ```
+  
+
+4. **Open your browser**
+   Navigate to [http://localhost:5173](http://localhost:5173)
+
+## 🎮 Usage
+
+### Basic Usage
+
+1. **Add Fields**: Click the "+ Add Item" button to create new fields
+2. **Configure Fields**: 
+   - Enter field name in the text input
+   - Select field type from dropdown (String, Number, Boolean, Nested)
+   - Toggle the switch to mark fields as required
+3. **Create Nested Structures**: Select "Nested" type to create child fields
+4. **Real-time Preview**: Watch your JSON schema update in real-time on the right panel
+
+### Field Types
+
+| Type | Description | JSON Output |
+|------|-------------|-------------|
+| **String** | Text field | \`"STRING"\` |
+| **Number** | Numeric field | \`"number"\` |
+| **Boolean** | True/false field | \`"boolean"\` |
+| **Nested** | Object with child fields | \`{...}\` |
+
+### Example Schema
+
+```
+{
+  "name": "STRING",
+  "age": "number",
+  "isActive": "boolean",
+  "address": {
+    "street": "STRING",
+    "city": "STRING",
+    "coordinates": {
+      "lat": "number",
+      "lng": "number"
+    }
+  }
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏗️ Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+json-schema-builder/
+├── src/
+│   ├── components/
+│   │   ├── JsonSchemaBuilder.tsx    # Main container component
+│   │   └── FieldRow.tsx            # Individual field component
+│   ├── types/
+│   │   └── index.ts                # TypeScript type definitions
+│   ├── utils/
+│   │   └── index.ts                # Utility functions
+│   ├── page.tsx                    # Home page
+│   ├── layout.tsx                  # Root layout
+│   └── globals.css                 # Global styles
+├── components/ui/                  # ShadCN UI components
+│   ├── input.tsx
+│   ├── button.tsx
+│   ├── switch.tsx
+│   └── select.tsx
+├── lib/
+│   └── utils.ts                    # Utility functions
+└── README.md
+```
+
+## 🛠️ Built With
+
+- **[React 19](https://reactjs.org/)** - UI library
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
+- **[Tailwind CSS](https://tailwindcss.com/)** - Styling
+- **[ShadCN/UI](https://ui.shadcn.com/)** - UI components
+- **[Radix UI](https://www.radix-ui.com/)** - Headless UI primitives
+- **[Lucide React](https://lucide.dev/)** - Icons
+
+
+
